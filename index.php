@@ -44,16 +44,17 @@ $fruits = [
     ]
 ];
 
-$uniqueFruits = [];
+//solusi
+
+$uniqueFruits = []; //pembuatan array baru
 
 foreach ($fruits as $fruit) {
-    $fruitName = strtolower($fruit['fruitName']);
-    if (!isset($uniqueFruits[$fruitName])) {
-        $uniqueFruits[$fruitName] = $fruit;
+    $fruitName = strtolower($fruit['fruitName']); //format nama ke lowercase
+    if (!isset($uniqueFruits[$fruitName])) { // pengecekan jika terdapat array dengan index nama formatted belum ada
+        $uniqueFruits[$fruitName] = $fruit; // simpan data buah ke array baru berdasarkan index nama buah yang sudah dilowercase
     }
 }
 
-$uniqueFruits = array_values($uniqueFruits);
+$uniqueFruits = array_values($uniqueFruits); // mengembalikan array ke index numeric
 
 print_r($uniqueFruits);
-?>
